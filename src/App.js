@@ -1,5 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Main from "./layout/main";
+import Secenekler from "./layout/secenekler";
+import Siparisolustur from "./pages/siparisolustur";
+import Navmenu from "./pages/navmenu";
+import Menuler from "./pages/menuler";
 
 const App = () => {
   return (
@@ -12,7 +17,7 @@ const App = () => {
               <Main />
             </div>
             <div>
-              <Navmenü />
+              <Navmenu />
             </div>
             <div>
               <Secenekler />
