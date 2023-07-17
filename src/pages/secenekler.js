@@ -1,7 +1,8 @@
 import React from "react";
-import Oneriler from "../pages/oneriler";
+import Oneriler from "../comps/oneriler";
 import "./secenekler.css";
-import Menuler from "../pages/menuler";
+import Menuler from "../comps/menuler";
+import Urunler from "../comps/urunler";
 export default function Secenekler() {
   return (
     <div id="secenekler">
@@ -10,6 +11,10 @@ export default function Secenekler() {
       </div>
       <div>
         <Menuler />
+      </div>
+
+      <div>
+        <Urunler />
       </div>
     </div>
   );
