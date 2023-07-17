@@ -1,10 +1,35 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const App = () => {
   return (
     <>
-      <h1>Teknolojik Yemekler</h1>
-      <p>Burdaki kodu silip kendi headerınızı ekleyebilirsiniz</p>
+      <div>
+        <Router>
+          <div>
+            {/* <Link to="/pizza">Secenekler</Link> */}
+            <div>
+              <Main />
+            </div>
+            <div>
+              <Navmenü />
+            </div>
+            <div>
+              <Secenekler />
+            </div>
+
+            <Switch>
+              <Route path="/pizza">
+                <Secenekler />
+              </Route>
+
+              <Route path="/pizza-olustur">
+                <Siparisolustur />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </div>
     </>
   );
 };
