@@ -1,18 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./layout/home";
+import SepeteEkelenen from "./comps/SiparisDetayları/SeçilenÜrün";
+import SiparisOlustur from "./layout/siparisOlustur";
 
 const App = () => {
   return (
     <>
-      <div>
-        <Router>
-          <div>
-            {/* <Link to="/pizza">Secenekler</Link> */}
-            <Home />
-          </div>
-        </Router>
-      </div>
+      <Routes>
+        <Route path="/*" element={<Home />} />
+        <Route path="/siparis-olustur" element={<SiparisOlustur />}>
+          <Route path="/siparis-olustur/:id" element={<SepeteEkelenen />} />
+        </Route>
+      </Routes>
     </>
   );
 };

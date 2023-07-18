@@ -1,7 +1,7 @@
 import React from "react";
 import "./main.css";
 
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 
 export default function Main() {
   const scrollToOptions = () => {
@@ -28,4 +28,8 @@ export default function Main() {
   );
 }
 
-/*   <h1 className='FONT-Barlow'>Teknolojik Yemekler</h1>*/
+/*   <h1 className="FONT-Barlow">Teknolojik Yemekler</h1>   yerine
+
+     <img src="logo.svg" alt="logo svg" /> ----artık çalışmıyor neden anlamadım
+
+*/

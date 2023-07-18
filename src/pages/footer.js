@@ -23,13 +23,15 @@ export default function Footer() {
           <div className="footer-contents">
             <h1>Teknolojik Yemekler</h1>
             <p>
-              <img src={Footer1}></img> 341 Londonderry Road, İstanbul Türkiye
+              <img src={Footer1} alt="fimg1"></img> 341 Londonderry Road,
+              İstanbul Türkiye
             </p>
             <p>
-              <img src={Footer2}></img> aciktim@teknolojikyemekler.com
+              <img src={Footer2} alt="fimg2"></img>{" "}
+              aciktim@teknolojikyemekler.com
             </p>
             <p>
-              <img src={Footer3}></img> +90 216 123 45 67
+              <img src={Footer3} alt="fimg3"></img> +90 216 123 45 67
             </p>
           </div>
 
@@ -46,12 +48,12 @@ export default function Footer() {
           <div className="footer-contents">
             <h2>Instagram</h2>
             <div id="insta-resimleri">
-              <img src={Insta0}></img>
-              <img src={Insta1}></img>
-              <img src={Insta2}></img>
-              <img src={Insta3}></img>
-              <img src={Insta4}></img>
-              <img src={Insta5}></img>
+              <img src={Insta0} alt="insta0"></img>
+              <img src={Insta1} alt="insta1"></img>
+              <img src={Insta2} alt="insta2"></img>
+              <img src={Insta3} alt="insta3"></img>
+              <img src={Insta4} alt="insta4"></img>
+              <img src={Insta5} alt="insta5"></img>
             </div>
           </div>
         </div>

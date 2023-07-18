@@ -48,8 +48,12 @@
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
 }
-.icerik-logolar-isimleri img,
-p {
+.icerik-logolar-isimleri img {
+  padding: 0px 5px;
+  font-family: "Barlow", sans-serif;
+}
+
+.icerik-logolar-isimleri p {
   padding: 0px 5px;
   font-family: "Barlow", sans-serif;
 }

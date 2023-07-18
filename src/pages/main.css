@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap");
 #menü-içerik {
   height: 100vh;
   background-image: url("../image/mvp-banner.png");
@@ -25,20 +27,19 @@
 }
 .FONT-Barlow-KOD {
   /* kod acıktırır yazısı */
-  font-family: "Quattrocento", serif;
+  font-family: "Barlow", sans-serif;
   font-size: 3.5em;
   margin: 0px;
   font-weight: inherit;
   padding-top: 0px;
   padding-bottom: 15px;
 }
-/* teknolojik yemekler yazısı 
+/* teknolojik yemekler yazısı */
 .FONT-Barlow {
-  
   font-family: "Barlow", sans-serif;
   font-size: 2em;
   margin: 1em 0em;
-}*/
+}
 
 #main-button {
   color: #292929;
