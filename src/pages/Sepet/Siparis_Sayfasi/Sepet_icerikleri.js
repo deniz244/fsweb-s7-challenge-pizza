@@ -16,7 +16,7 @@ export default function Sepet_icerikleri() {
     event.preventDefault();
     const data = {
       ÜrünAdı: ürünler.PizzaAdi,
-      ÜrünFiyatı: ürünler.Fiyat + "TL",
+      ÜrünFiyatı: ürünler.Fiyat + "₺",
       ÜrünAçıklaması: ürünler.Aciklamasi,
       ÜrünPuanı: ürünler.Puan,
       ÜrünSatışAdeti: ürünler.SatisAdeti,
@@ -26,6 +26,7 @@ export default function Sepet_icerikleri() {
       siparisNotu: siparisNotu,
     };
 
+    // VERİ BAŞARILI GÖNDERLİRSE ==>>> SİPARİŞ ONAY SAYFASINA YÖNLENDİRME ATIYORUM
     fetch("https://6456b1042e41ccf16923222e.mockapi.io/pizzaSiparisleri", {
       method: "POST",
       headers: {

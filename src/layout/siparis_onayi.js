@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import "./siparis_onayi.css";
+
 export default function SiparisOnayi() {
   const { id } = useParams();
   console.log("merhaba", id);

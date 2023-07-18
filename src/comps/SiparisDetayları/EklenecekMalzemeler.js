@@ -3,15 +3,20 @@ import { useState } from "react";
 import "./css/EklenecekMalzemeler.css";
 
 const urunler = [
+  { name: "Pepperoni " },
+  { name: "Domates " },
+  { name: "Biber " },
+  { name: "Sosis " },
   { name: "Mısır " },
   { name: "Sucuk " },
-  { name: "Sosis " },
+  { name: "Kanada Jambonu " },
+  { name: "Zeytin " },
   { name: "Ananas " },
+  { name: "Tavuk Izgara " },
+  { name: "Jalepeno " },
   { name: "Kabak " },
-  { name: "Biber " },
   { name: "Soğan " },
   { name: "Sarımsak " },
-  { name: "Zeytin " },
 ];
 
 export default function EklenecekMalzemeler({
