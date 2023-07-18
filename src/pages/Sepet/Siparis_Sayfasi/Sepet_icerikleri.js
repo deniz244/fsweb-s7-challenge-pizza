@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-//import HamurBoyutu from "../../comps/SiparisDetayları/PizzaBoyutu";
-//import HamurKalinligi from "../../comps/SiparisDetayları/HamurKalinligi";
-//import SiparisNotu from "../../comps/SiparisDetayları/SiparisNotu";
-//import EklenecekMalzemeler from "../../comps/SiparisDetayları/EklenecekMalzemeler";
-//import SepeteEkelenen from "../../comps/SiparisDetayları/SeçilenÜrün";
-//import Footer from "../footer";
+import HamurBoyutu from "../../../comps/SiparisDetayları/PizzaBoyutu";
+import HamurKalinligi from "../../../comps/SiparisDetayları/HamurKalinligi";
+import SiparisNotu from "../../../comps/SiparisDetayları/SiparisNotu";
+import EklenecekMalzemeler from "../../../comps/SiparisDetayları/EklenecekMalzemeler";
+import SepeteEkelenen from "../../../comps/SiparisDetayları/SeçilenÜrün";
 
 import axios from "axios";
 import "./Sepet_icerikleri.css";
@@ -68,7 +67,7 @@ export default function Sepet_icerikleri() {
   console.log("Pizza Boyutu", { secilenBoyut });
 
   // Pizza Hamur Kalınlığı
-  const [seciliHamur, setSeciliHamur] = useState("Normal");
+  const [seciliHamur, setSeciliHamur] = useState("sec");
   console.log("Pizza Hamuru Kalınlığı", { seciliHamur });
 
   // Pizza Sipariş Notu
@@ -81,44 +80,46 @@ export default function Sepet_icerikleri() {
   return (
     <div id="main-con-sepet-icerik">
       <div id="main-container-sepet">
-        <form onSubmit={handleSubmit}>
+        <form id="pizza-form" onSubmit={handleSubmit}>
           <div id="container-Page">
             <div className="container-Siparis">
-              {/*<SepeteEkelenen ürünler={ürünler} setÜrünler={setÜrünler} /> */}
+              <SepeteEkelenen urunler={ürünler} setUrunler={setÜrünler} />
             </div>
 
             <div id="Boyut-Hamur">
               <div className="container-Siparis">
-                {/* <HamurBoyutu
+                <HamurBoyutu
                   secilenBoyut={secilenBoyut}
                   setSecilenBoyut={setSecilenBoyut}
-                /> */}
+                />
               </div>
 
               <div className="container-Siparis">
-                {/* <HamurKalinligi
+                <HamurKalinligi
                   seciliHamur={seciliHamur}
                   setSeciliHamur={setSeciliHamur}
-                />*/}
+                />
               </div>
             </div>
 
             <div className="container-Siparis">
-              {/* <EklenecekMalzemeler
+              <EklenecekMalzemeler
                 eklenenUrunler={eklenenUrunler}
                 setEklenenUrunler={setEklenenUrunler}
-              />*/}
+              />
             </div>
 
             <div className="container-Siparis">
-              {/* <SiparisNotu
+              <SiparisNotu
                 siparisNotu={siparisNotu}
                 setSiparisNotu={setSiparisNotu}
-              />*/}
+              />
             </div>
 
             <div className="container-Siparis" id="button-siparis">
-              <button type="submit">SİPARİŞ VER</button>
+              <button id="order-button" type="submit">
+                SİPARİŞ VER
+              </button>
             </div>
           </div>
         </form>

@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/SiparisNotu.css";
 
 export default function SiparisNotu({ siparisNotu, setSiparisNotu }) {
   const siparisNotunuGuncelle = (event) => {
@@ -6,9 +7,18 @@ export default function SiparisNotu({ siparisNotu, setSiparisNotu }) {
   };
 
   return (
-    <div>
-      <label>Sipariş Notu:</label>
-      <input type="text" value={siparisNotu} onChange={siparisNotunuGuncelle} />
+    <div id="SiparisNotu">
+      <div id="SiparisNotuText">
+        <label>Sipariş Notu</label>
+      </div>
+      <div id="SiparisNotuİnput">
+        <textarea
+          placeholder="Siparişine eklemek istediğin bir not var mı?"
+          type="text"
+          value={siparisNotu}
+          onChange={siparisNotunuGuncelle}
+        />
+      </div>
     </div>
   );
 }

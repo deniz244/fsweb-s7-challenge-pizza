@@ -65,7 +65,7 @@ export default function EklenecekMalzemeler({
   return (
     <div id="EklenecekMalzemeler-Main">
       <h3>Ek Malzemeler</h3>
-      <p>En fazla 6 malzeme seçebilirsiniz. 5₺</p>
+      <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
       <div id="Ürünler">{urunButonlari}</div>
     </div>
   );

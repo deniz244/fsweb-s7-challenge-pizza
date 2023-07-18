@@ -2,7 +2,8 @@ import React from "react";
 import SepeteEkelenen from "../comps/SiparisDetayları/SeçilenÜrün";
 import "./siparisOlustur.css";
 import Sepet_icerikleri from "../pages/Sepet/Siparis_Sayfasi/Sepet_icerikleri";
-//import SiparisOnayi from "../pages/Sepet/siparis_onayi";
+
+import Footer from "../pages/footer";
 
 export default function SiparisOlustur() {
   return (
@@ -17,6 +18,8 @@ export default function SiparisOlustur() {
       <div id="siparis-detayı">
         <Sepet_icerikleri />
       </div>
+
+      <Footer />
     </div>
   );
 }
