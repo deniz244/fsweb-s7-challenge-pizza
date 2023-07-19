@@ -7,11 +7,11 @@ export default function SiparisNotu({ siparisNotu, setSiparisNotu }) {
   };
 
   return (
-    <div id="SiparisNotu">
-      <div id="SiparisNotuText">
+    <div className="SiparisNotu">
+      <div className="SiparisNotuText">
         <label>Sipariş Notu</label>
       </div>
-      <div id="SiparisNotuİnput">
+      <div className="SiparisNotuİnput">
         <textarea
           placeholder="Siparişine eklemek istediğin bir not var mı?"
           type="text"

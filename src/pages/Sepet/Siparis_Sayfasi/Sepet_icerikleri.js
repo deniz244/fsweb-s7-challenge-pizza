@@ -194,7 +194,7 @@ export default function Sepet_icerikleri() {
                         <p>{EklenenUrunlerFiyati}₺</p>
                       </div>
 
-                      {/* //Hızlı siparis mesaj gözüktürme --107 
+                      {/* //Hızlı siparis mesaj gözüktürme --109 
  <div className="siparis-fiyatlar acik-gri">{mesaj}</div>*/}
 
                       <div className="siparis-fiyatlar toplam-ucret">
