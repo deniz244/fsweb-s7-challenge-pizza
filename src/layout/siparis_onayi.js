@@ -9,7 +9,7 @@ export default function SiparisOnayi() {
   const { id } = useParams();
   console.log("merhaba", id);
 
-  const [OnayDatası, setOnayDatası] = useState([]);
+  const [onayDatası, setOnayDatası] = useState([]);
 
   useEffect(() => {
     axios
@@ -35,37 +35,37 @@ export default function SiparisOnayi() {
           </div>
           <hr />
           <div id="onay-sayfasi-container-2">
-            <p id="onay-ürün-adi">{OnayDatası.ÜrünAdı}</p>
+            <p id="onay-ürün-adi">{onayDatası.ÜrünAdı}</p>
             <div id="onay-container-2-içerisi">
               <div>
                 <p>
                   Boyut:{" "}
                   <span className="onay-font-kalin">
-                    {OnayDatası.SecilenBoyut}
+                    {onayDatası.SecilenBoyut}
                   </span>
                 </p>
                 <p>
                   Hamur:{" "}
                   <span className="onay-font-kalin">
-                    {OnayDatası.seçiliHamur}
+                    {onayDatası.seçiliHamur}
                   </span>
                 </p>
                 <p>
                   Ek Malzemeler:{" "}
                   <span className="onay-font-kalin">
-                    {OnayDatası.eklenenUrunler}
+                    {onayDatası.eklenenUrunler}
                   </span>
                 </p>
                 <p>
                   Sipariş Notu:{" "}
                   <span className="onay-font-kalin">
-                    {OnayDatası.siparisNotu}
+                    {onayDatası.siparisNotu}
                   </span>
                 </p>
                 <p>
                   Sipariş Toplamı:{" "}
                   <span className="onay-font-kalin">
-                    {OnayDatası.ÜrünFiyatı}
+                    {onayDatası.ÜrünFiyatı}
                   </span>
                 </p>
               </div>

@@ -26,7 +26,7 @@ export default function Sepet_icerikleri() {
       siparisNotu: siparisNotu,
     };
 
-    // VERİ BAŞARILI GÖNDERLİRSE ==>>> SİPARİŞ ONAY SAYFASINA YÖNLENDİRME ATIYORUM
+    // VERİ BAŞARILI GÖNDERLİRSE ==>>> SİPARİŞ ONAY SAYFASINA YÖNLENDİRME
     fetch("https://6456b1042e41ccf16923222e.mockapi.io/pizzaSiparisleri", {
       method: "POST",
       headers: {
@@ -37,7 +37,7 @@ export default function Sepet_icerikleri() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        navigate(`/siparis-onayi/${sonSiparisId}`); // EĞER VERİ BAŞARI ŞEKİLDE YÜKLENDİYSE Yönlendirme yap
+        navigate(`/siparis-onayi/${sonSiparisId}`); //  Veri başarılı şekilde yüklendiyse yönlendirme yap
       })
       .catch((error) => console.log(error));
   };
