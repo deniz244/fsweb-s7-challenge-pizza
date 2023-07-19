@@ -25,7 +25,9 @@ const App = () => {
 export default App;
 
 /*
-<Route path="/siparis-onayi" element={<SiparisOnayi />}>
-          <Route path="/siparis-onayi:id" element={<SiparisOnayi />} />
+<Route path="/success" element={<SiparisOnayi />}>
+          <Route path="/success:id" element={<SiparisOnayi />} />
         </Route>
+
+        yani path="/success" olduğunda Sepet_icerikleri navigate kısmında da path="/success" verilirse yine çalışıyor 
  */
