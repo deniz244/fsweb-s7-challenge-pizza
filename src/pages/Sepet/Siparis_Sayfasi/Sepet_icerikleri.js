@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HamurBoyutu from "../../../comps/SiparisDetayları/PizzaBoyutu";
 import HamurKalinligi from "../../../comps/SiparisDetayları/HamurKalinligi";
 import SiparisNotu from "../../../comps/SiparisDetayları/SiparisNotu";
 import EklenecekMalzemeler from "../../../comps/SiparisDetayları/EklenecekMalzemeler";
 import SepeteEkelenen from "../../../comps/SiparisDetayları/SeçilenÜrün";
+
+import ArtirmaEksiltme from "../../../comps/SiparisDetayları/ArtirmaEksiltme";
 
 import axios from "axios";
 import "./Sepet_icerikleri.css";
@@ -16,7 +18,7 @@ export default function Sepet_icerikleri() {
     event.preventDefault();
     const data = {
       ÜrünAdı: ürünler.PizzaAdi,
-      ÜrünFiyatı: ürünler.Fiyat + "₺",
+      ÜrünFiyatı: ToplamFiyat + "₺",
       ÜrünAçıklaması: ürünler.Aciklamasi,
       ÜrünPuanı: ürünler.Puan,
       ÜrünSatışAdeti: ürünler.SatisAdeti,
@@ -42,6 +44,8 @@ export default function Sepet_icerikleri() {
       .catch((error) => console.log(error));
   };
 
+  // SİPARİŞİN GÖNDERİLDİĞİ DATA SUNUCUDAN ESKİ BİR ÖNCEKİ İD NUMARASI ÇEKİLİYOR VE
+  // ÇEKİLEN İD NUMARASININA  +1 EKLEYEREK YENİ SAYFAYA YÖNLENDİRMEK İÇİN İD NUMARASINI sonSiparisId İÇERİSİNE ATIYOR
   const [sonSiparisId, setSonSiparisId] = useState("");
 
   console.log("sonSiparisId", sonSiparisId);
@@ -61,8 +65,6 @@ export default function Sepet_icerikleri() {
 
   const [ürünler, setÜrünler] = useState([]);
 
-  console.log("Ürünleri Detaylı İnceliyorum", ürünler.Fiyat);
-
   // Pizza Boyutu
   const [secilenBoyut, setSecilenBoyut] = useState("Orta Boy (M)");
   console.log("Pizza Boyutu", { secilenBoyut });
@@ -75,8 +77,58 @@ export default function Sepet_icerikleri() {
   const [siparisNotu, setSiparisNotu] = useState("");
   console.log("Siparis Notu:", { siparisNotu });
 
+  //Ek Malzemeler
   const [eklenenUrunler, setEklenenUrunler] = useState([]);
   console.log("Eklenen Malzemeler:", { eklenenUrunler });
+
+  /* // Hızlı sipariş bölümü
+  const [hizliSiparis, setHizliSiparis] = useState(false);
+  console.log("Hızlı Sipariş :", { hizliSiparis });*/
+
+  // Sipariş Adeti Artırma ve Eksiltme
+  const [adet, setAdet] = useState(1);
+  console.log("Sipariş Adeti");
+
+  //  TOPLAM FİYAT OLUŞTURMA BÖLÜMÜ //
+  const PizzaUcreti = adet * ürünler.Fiyat;
+  // EKLENEN ÜRÜN BAŞINA 5TL FİYAT EKLEME BÖLÜMÜ
+  const EklenenUrunlerFiyati = adet * (eklenenUrunler.length * 5);
+
+  /*  // Hızlı Sipariş Seçilirse +20tl
+  const HizliSiparisUcreti = hizliSiparis ? 20 : 0;
+  
+      //Hızlı Sipariş'li  Toplam Ücret Hesaplandı
+  const ToplamFiyat = PizzaUcreti + EklenenUrunlerFiyati + HizliSiparisUcreti;
+  console.log("Toplam Güncel Fiyat:", ToplamFiyat, "₺");
+  */
+
+  // Toplam Ücret Hesaplandı
+  const ToplamFiyat = PizzaUcreti + EklenenUrunlerFiyati;
+  console.log("Toplam Güncel Fiyat:", ToplamFiyat, "₺");
+
+  /* // Hızlı Sipariş  fiyat bölümünde gözüktürme
+  let mesaj = null;
+  if (hizliSiparis == true) {
+    mesaj = (
+      <>
+        <p>Hızlı Sipariş</p>
+        <p>20₺</p>
+      </>
+    );
+  } else {
+    mesaj = null;
+  }
+  //  --------------------------------------------  // */
+
+  // 4 üründen az ek malzeme eklenirse submit button disable
+  const [submitDisabled, setSubmitDisabled] = useState(false);
+  useEffect(() => {
+    if (eklenenUrunler.length < 5) {
+      setSubmitDisabled(true);
+    } else {
+      setSubmitDisabled(false);
+    }
+  }, [eklenenUrunler]);
 
   return (
     <div id="main-con-sepet-icerik">
@@ -118,9 +170,51 @@ export default function Sepet_icerikleri() {
             </div>
 
             <div className="container-Siparis" id="button-siparis">
-              <button id="order-button" type="submit">
-                SİPARİŞ VER
-              </button>
+              <div id="siparis-detay-main">
+                <div id="siparis-detay-container-1">
+                  <div className="siparis_container_padding">
+                    <ArtirmaEksiltme adet={adet} setAdet={setAdet} />
+                  </div>
+
+                  <div
+                    className="siparis_container_padding"
+                    id="siparis-detay-container-1-0"
+                  >
+                    <div id="siparis-detay-container-1-1">
+                      <div className="siparis-fiyatlar">
+                        <p id="bolder">Sipariş Toplamı</p>
+                      </div>
+                      <div className="siparis-fiyatlar acik-gri">
+                        <p>Pizza Ücreti</p>
+                        <p>{PizzaUcreti}₺</p>
+                      </div>
+
+                      <div className="siparis-fiyatlar acik-gri">
+                        <p>Ek Ürünler</p>
+                        <p>{EklenenUrunlerFiyati}₺</p>
+                      </div>
+
+                      {/* //Hızlı siparis mesaj gözüktürme --107 
+ <div className="siparis-fiyatlar acik-gri">{mesaj}</div>*/}
+
+                      <div className="siparis-fiyatlar toplam-ucret">
+                        <p>Toplam</p>
+                        <p>{ToplamFiyat}₺</p>
+                      </div>
+                    </div>
+
+                    <div id="button-siparis">
+                      <button
+                        id="order-button"
+                        type="submit"
+                        disabled={submitDisabled}
+                      >
+                        SİPARİŞ VER
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </form>
