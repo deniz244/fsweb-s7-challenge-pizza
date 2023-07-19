@@ -16,18 +16,20 @@ export default function Oneriler() {
 
         <div id="ikili-menü">
           <div id="kart2">
-            <div id="burger-menü-h1">
+            <div id="burger-menü">
               <h1 id="Hackathlon-Burger">Hackathlon Burger Menü</h1>
               <button className="oneri-butonlar">SİPARİŞ VER</button>
             </div>
           </div>
 
-          <div id="kart3">
-            <div id="çok-hızlı">
-              <h1 id="Hackathlon-Burger-h1">
-                <span id="çoook-red">Çoooook</span> hızlı npm gibi kurye
-              </h1>
-              <button className="oneri-butonlar">SİPARİŞ VER</button>
+          <div>
+            <div id="kart3">
+              <div id="çok-hızlı">
+                <h1 id="Hackathlon-Burger-h1">
+                  <span id="çoook-red">Çoooook</span> hızlı npm gibi kurye
+                </h1>
+                <button className="oneri-butonlar">SİPARİŞ VER</button>
+              </div>
             </div>
           </div>
         </div>
