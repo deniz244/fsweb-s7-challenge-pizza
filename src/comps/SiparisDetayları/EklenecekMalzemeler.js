@@ -40,7 +40,7 @@ export default function EklenecekMalzemeler({
       .of(yup.string())
       .required(),
   });
-  // UYARI MESAJINI YAZDIRMA ÇEŞİTİ....
+  // UYARI MESAJINI YAZDIRMA
   let uyarıMesajı = null;
   try {
     schema.validateSync({ selectedItems: eklenenUrunler });
@@ -48,7 +48,7 @@ export default function EklenecekMalzemeler({
     uyarıMesajı = <div>{error.message}</div>;
   }
 
-  //  consola 4 tane az ürün seçilirse yazdırıyor
+  //  consola 5 tane az ürün seçilirse yazdırıyor
   useEffect(() => {
     schema
       .validate({ selectedItems: eklenenUrunler })
@@ -94,7 +94,7 @@ export default function EklenecekMalzemeler({
       {
         <p id="uyari">
           {uyarıMesajı}
-        </p> /*yup tan gelen 4 malzeme seçin uyarı mesajı p tag içinde  */
+        </p> /*yup tan gelen 5 malzeme seçin uyarı mesajı p tag içinde  */
       }
       <div id="Ürünler">{urunButonlari}</div>
     </div>

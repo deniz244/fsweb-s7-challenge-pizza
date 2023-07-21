@@ -81,10 +81,6 @@ export default function Sepet_icerikleri() {
   const [eklenenUrunler, setEklenenUrunler] = useState([]);
   console.log("Eklenen Malzemeler:", { eklenenUrunler });
 
-  /* // Hızlı sipariş bölümü
-  const [hizliSiparis, setHizliSiparis] = useState(false);
-  console.log("Hızlı Sipariş :", { hizliSiparis });*/
-
   // Sipariş Adeti Artırma ve Eksiltme
   const [adet, setAdet] = useState(1);
   console.log("Sipariş Adeti");
@@ -94,33 +90,11 @@ export default function Sepet_icerikleri() {
   // EKLENEN ÜRÜN BAŞINA 5TL FİYAT EKLEME BÖLÜMÜ
   const EklenenUrunlerFiyati = adet * (eklenenUrunler.length * 5);
 
-  /*  // Hızlı Sipariş Seçilirse +20tl
-  const HizliSiparisUcreti = hizliSiparis ? 20 : 0;
-  
-      //Hızlı Sipariş'li  Toplam Ücret Hesaplandı
-  const ToplamFiyat = PizzaUcreti + EklenenUrunlerFiyati + HizliSiparisUcreti;
-  console.log("Toplam Güncel Fiyat:", ToplamFiyat, "₺");
-  */
-
   // Toplam Ücret Hesaplandı
   const ToplamFiyat = PizzaUcreti + EklenenUrunlerFiyati;
   console.log("Toplam Güncel Fiyat:", ToplamFiyat, "₺");
 
-  /* // Hızlı Sipariş  fiyat bölümünde gözüktürme
-  let mesaj = null;
-  if (hizliSiparis == true) {
-    mesaj = (
-      <>
-        <p>Hızlı Sipariş</p>
-        <p>20₺</p>
-      </>
-    );
-  } else {
-    mesaj = null;
-  }
-  //  --------------------------------------------  // */
-
-  // 4 üründen az ek malzeme eklenirse submit button disable
+  // 5 üründen az ek malzeme eklenirse submit button disable
   const [submitDisabled, setSubmitDisabled] = useState(false);
   useEffect(() => {
     if (eklenenUrunler.length < 5) {
@@ -193,9 +167,6 @@ export default function Sepet_icerikleri() {
                         <p>Ek Ürünler</p>
                         <p>{EklenenUrunlerFiyati}₺</p>
                       </div>
-
-                      {/* //Hızlı siparis mesaj gözüktürme --109 
- <div className="siparis-fiyatlar acik-gri">{mesaj}</div>*/}
 
                       <div className="siparis-fiyatlar toplam-ucret">
                         <p>Toplam</p>
