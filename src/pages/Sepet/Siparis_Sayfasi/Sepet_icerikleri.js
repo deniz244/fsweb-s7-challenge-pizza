@@ -28,7 +28,7 @@ export default function Sepet_icerikleri() {
       siparisNotu: siparisNotu,
     };
 
-    // VERİ BAŞARILI GÖNDERLİRSE ==>>> SİPARİŞ ONAY SAYFASINA YÖNLENDİRME
+    // VERİ BAŞARILI GÖNDERLİRSE ==>>> SİPARİŞ ONAY SAYFASINA YÖNLENDİRME SUCCESS
     fetch("https://6456b1042e41ccf16923222e.mockapi.io/pizzaSiparisleri", {
       method: "POST",
       headers: {

@@ -15,7 +15,7 @@ export default function Main() {
     <div id="order-pizza">
       <div id="menü-içerik">
         <div id="menü-yazıları">
-          <h1 className="FONT-Barlow">Teknolojik Yemekler</h1>
+          <img src="logo.svg" alt="logo svg" />
           <p className="FONT-Satisfy">fırsatı kaçırma</p>
           <h1 className="FONT-Barlow-KOD">KOD ACIKTIRIR</h1>
           <h1 className="FONT-Barlow-KOD">PIZZA, DOYURUR</h1>
